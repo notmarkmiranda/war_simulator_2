@@ -32,10 +32,10 @@ class Game
   end
 
   def play_entire_game
-    hand_count = 0
-    until smallest_hand_size.zero?
+    hand_count = 0.0
+    until smallest_hand_size.zero? || hand_count > 49_999
       play
-      hand_count += 1
+      hand_count += 1.0
     end
     hand_count
   end
