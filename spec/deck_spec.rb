@@ -18,4 +18,15 @@ describe Deck do
       expect(deck.card_count).to eq(52)
     end
   end
+
+  context '#shuffle' do
+    let!(:og_first_card) { deck.cards.first }
+    let!(:og_last_card) { deck.cards.last }
+    it 'shuffles the cards' do
+      deck.shuffle!
+
+      expect(deck.cards.first).to_not eq(og_first_card)
+      expect(deck.cards.last).to_not eq(og_last_card)
+    end
+  end
 end

@@ -15,7 +15,9 @@ class Player
 
   def remove_from_top(cards=1)
     raise NotEnoughCardsError if cards > hand_count
-    hand.shift(cards)
+    removed_cards = hand.shift(cards)
+    return removed_cards.first if cards == 1
+    removed_cards
   end
 
   class NotEnoughCardsError < StandardError; end
