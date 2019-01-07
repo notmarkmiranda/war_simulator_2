@@ -26,14 +26,15 @@ class Game
   def play
     p1, p2 = player_one.remove_from_top, player_two.remove_from_top
     winner = compare_cards(p1: p1, p2: p2)
-    winner.add_to_bottom([comparing[:p1], comparing[:p2], escrow].flatten)
+    card_bounty = [comparing[:p1], comparing[:p2], escrow].flatten
+    winner.add_to_bottom(card_bounty.shuffle)
     clear_comparing
     clear_escrow
   end
 
   def play_entire_game
     hand_count = 0.0
-    until smallest_hand_size.zero? || hand_count > 49_999
+    until smallest_hand_size.zero?
       play
       hand_count += 1.0
     end
