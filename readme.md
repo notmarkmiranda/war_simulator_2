@@ -8,3 +8,4 @@ I wanted to work on a card game simulator that could complete a card game withou
 1. `ruby run_it.rb` will run the program with 2 games
 1. or use `ruby run_it.rb 25` to run 25 games (there is no error handling for entering non-numbers, please don't be a jerk)
 1. sample output:
+![Sample Output](https://github.com/notmarkmiranda/war_simulator_2/blob/master/war_output.png)
